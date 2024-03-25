@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantri - What's in Your Fridge App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pantri</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to Pantri</h2>
+            <p>Find recipes based on what's in your fridge!</p>
+            <button id="startBtn">Start</button>
+        </section>
+
+        <section id="preferences" class="hidden">
+            <h2>Preferences</h2>
+            <form>
+                <label for="dietaryRestrictions">Dietary Restrictions:</label>
+                <select id="dietaryRestrictions" multiple>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="gluten-free">Gluten-free</option>
+                    <option value="dairy-free">Dairy-free</option>
+                </select>
+
+                <label for="servings">Number of Servings:</label>
+                <input type="number" id="servings" min="1" value="1">
+
+                <label for="flavor">Flavor Preference:</label>
+                <select id="flavor">
+                    <option value="sweet">Sweet</option>
+                    <option value="savory">Savory</option>
+                    <option value="both">Both</option>
+                </select>
+
+                <button type="submit">Next</button>
+            </form>
+        </section>
+
+        <section id="ingredients" class="hidden">
+            <h2>Ingredients</h2>
+            <div id="ingredientCard">
+                <!-- Ingredient cards will be dynamically generated here -->
+            </div>
+            <button id="findRecipesBtn" class="hidden">Find Recipes</button>
+        </section>
+
+        <section id="recipes" class="hidden">
+            <h2>Recipes</h2>
+            <div id="recipeList">
+                <!-- Recipe cards will be dynamically generated here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pantri. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
