@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', function() {
+  // Your existing JavaScript code goes here
+  // ...
+
+
 // Get DOM elements
 const startBtn = document.getElementById('startBtn');
 const preferencesSection = document.getElementById('preferences');
@@ -49,6 +54,7 @@ function renderIngredientCards() {
             <img src="${ingredient.image}" alt="${ingredient.name}">
             <h3>${ingredient.name}</h3>
         `;
+        });
 
         // Create a Hammer instance for each ingredient card
         let hammer = new Hammer(card);
