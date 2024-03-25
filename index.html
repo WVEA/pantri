@@ -1,91 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pantri - What's in Your Fridge App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantri - What's in Your Fridge App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Pantri</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <div class="logo">Pantri</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section id="home">
-            <div class="container">
-                <h1>Welcome to Pantri</h1>
-                <p>Find recipes based on what's in your fridge!</p>
-                <button id="startBtn" class="btn">Start</button>
-            </div>
-        </section>
+  <main>
+    <section id="home" class="section">
+      <div class="container">
+        <h1>Welcome to Pantri</h1>
+        <p>Find recipes based on what's in your fridge!</p>
+        <button id="startBtn" class="btn">Start</button>
+      </div>
+    </section>
 
-        <section id="preferences" class="hidden">
-            <div class="container">
-                <h2>Preferences</h2>
-                <form>
-                    <div class="form-group">
-                        <label for="dietaryRestrictions">Dietary Restrictions:</label>
-                        <select id="dietaryRestrictions" multiple>
-                            <option value="vegetarian">Vegetarian</option>
-                            <option value="vegan">Vegan</option>
-                            <option value="gluten-free">Gluten-free</option>
-                            <option value="dairy-free">Dairy-free</option>
-                        </select>
-                    </div>
+    <section id="preferences" class="section hidden">
+      <div class="container">
+        <h2>Preferences</h2>
+        <form id="preferencesForm">
+          <div class="form-group">
+            <label for="dietaryRestrictions">Dietary Restrictions:</label>
+            <select id="dietaryRestrictions" multiple>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="gluten-free">Gluten-free</option>
+              <option value="dairy-free">Dairy-free</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="servings">Number of Servings:</label>
+            <input type="number" id="servings" min="1" value="1">
+          </div>
+          <div class="form-group">
+            <label for="flavor">Flavor Preference:</label>
+            <select id="flavor">
+              <option value="sweet">Sweet</option>
+              <option value="savory">Savory</option>
+              <option value="both">Both</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Next</button>
+        </form>
+      </div>
+    </section>
 
-                    <div class="form-group">
-                        <label for="servings">Number of Servings:</label>
-                        <input type="number" id="servings" min="1" value="1">
-                    </div>
+    <section id="ingredients" class="section hidden">
+      <div class="container">
+        <h2>Ingredients</h2>
+        <div id="ingredientCard" class="card-container"></div>
+        <button id="findRecipesBtn" class="btn hidden">Find Recipes</button>
+      </div>
+    </section>
 
-                    <div class="form-group">
-                        <label for="flavor">Flavor Preference:</label>
-                        <select id="flavor">
-                            <option value="sweet">Sweet</option>
-                            <option value="savory">Savory</option>
-                            <option value="both">Both</option>
-                        </select>
-                    </div>
+    <section id="recipes" class="section hidden">
+      <div class="container">
+        <h2>Recipes</h2>
+        <div id="recipeList" class="card-container"></div>
+      </div>
+    </section>
+  </main>
 
-                    <button type="submit" class="btn">Next</button>
-                </form>
-            </div>
-        </section>
+  <footer>
+    <p>&copy; 2024 Pantri. All rights reserved.</p>
+  </footer>
 
-        <section id="ingredients" class="hidden">
-            <div class="container">
-                <h2>Ingredients</h2>
-                <div id="ingredientCard" class="card-container">
-                    <!-- Ingredient cards will be dynamically generated here -->
-                </div>
-                <button id="findRecipesBtn" class="btn hidden">Find Recipes</button>
-            </div>
-        </section>
-
-        <section id="recipes" class="hidden">
-            <div class="container">
-                <h2>Recipes</h2>
-                <div id="recipeList" class="card-container">
-                    <!-- Recipe cards will be dynamically generated here -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Pantri. All rights reserved.</p>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-    <script src="app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
